@@ -21,3 +21,24 @@
   margin-left: 20px;
   font-size: 20px;
 }
+
+.cart-icon-wrapper{
+position: relative;
+padding-right: 10px;
+}
+.cart-icon{
+position: absolute;
+display: flex;
+align-items: center;
+justify-content: center;
+width: 10px;
+color: black;
+font-weight: bold;
+height: 10px;
+font-size: 14px;
+right: 0;
+top: 0;
+border-radius: 50%;
+background-color: #ccc;
+padding: 5px;
+}

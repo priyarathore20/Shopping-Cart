@@ -4,13 +4,17 @@ import { ShopContext } from "../../context/shopContext";
 import { CartItem } from "./cartItem";
 import "./cart.css";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
 
 export const Cart = () => {
-  const { cartItems, getTotalCartAmount } = useContext(ShopContext);
+  const { cartItems, getTotalCartAmount, emptyCart } = useContext(ShopContext);
   const totalAmount = getTotalCartAmount();
-  const [amount, setAmount] = useState(getTotalCartAmount);
   const navigate = useNavigate();
+
+  const handleCheckout = () => {
+    emptyCart();
+    alert("Your order has been placed");
+    navigate("/");
+  };
 
   return (
     <div className="cart">
@@ -24,11 +28,11 @@ export const Cart = () => {
           }
         })}
       </div>
-      {amount > 0 ? (
+      {totalAmount > 0 ? (
         <div className="checkout">
-          <p>Subtotal : ${amount}</p>
+          <p>Subtotal : ${totalAmount}</p>
           <button onClick={() => navigate("/")}>Continue Shopping</button>
-          <button>Check Out.</button>
+          <button onClick={handleCheckout}>Check Out.</button>
         </div>
       ) : (
         <h1>Your Cart Is Empty !</h1>
