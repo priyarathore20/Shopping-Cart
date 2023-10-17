@@ -5,6 +5,8 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  position: fixed;
+  top: 0;
 }
 
 .links{
@@ -17,5 +19,5 @@
   text-decoration: none;
   color: white;
   margin-left: 20px;
-  font-size: 25px;
+  font-size: 20px;
 }
